@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  {% if lst %}
+  <h3>Items in the shopping cart </h3>
+  <h3>No of Items = {{n}}</h3><br>
+  <h3>Total Price = Rs. {{tot}}</h3><br>
+
+  {% else %}
+  <h3>Your Shopping Cart is Empty </h3>
+  {% endif %}
+  <!-- display the Shopping Cart-->
+
+  <table width=90% border="1">
+    {%for l in lst %}
+    <tr>
+      <td>
+        <h4>Name: {{l.formalshirt.name}}</h4><br>
+        <h4>Price: {{l.formalshirt.price}}</h4><br>
+        <h4>Description: {{l.formalshirt.desc}}</h4><br>
+      </td>
+      <td>
+        <img src="{{l.formalshirt.photo.url}}" alt="shirt photo" width="150" height="200">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4>Name: {{l.trousers.name}}</h4><br>
+        <h4>Price: {{l.trousers.price}}</h4><br>
+        <h4>Description: {{l.trousers.desc}}</h4><br>
+      </td>
+      <td>
+        <img src="{{l.trousers.photo.url}}" alt="shirt photo" width="150" height="200">
+      </td>
+      </td>
+    </tr>
+    </tr>
+    {% endfor %}
+
+    <h3><a href="clearcart"> Clear Contents of Cart </a></h3>
+    <br>
+</div>
+{% endblock %}

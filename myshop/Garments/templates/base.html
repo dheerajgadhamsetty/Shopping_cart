@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Graments shop </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <img src="/media/Banner.jpg" alt="My Garments shop banner" width=100% />
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">mygarments.com</a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus">Contact US</a>
+      </li>
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Shirts
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="formalshirts">Formal shirts</a>
+          <a class="dropdown-item" href="#">Causal shirts</a>
+          <a class="dropdown-item" href="#">T shirts</a>
+        </div>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Bottom Wear
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="trousers">Trousers</a>
+          <a class="dropdown-item" href="#">Jeans</a>
+          <a class="dropdown-item" href="#">Track Pants</a>
+        </div>
+      </li>
+      <form class="form-inline" action="/search_list" method="GET">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search in garments" name="query" value="{{query.GET.get}}">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+
+      <li class="nav-item">
+        <a class="nav-link" href="shoppingcart">Shopping Cart</a>
+      </li>
+    </ul>
+  </nav>
+  <br>
+
+  {% block content %}
+  {% endblock %}
+
+</body>
+
+</html>
